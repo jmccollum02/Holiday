@@ -1,0 +1,30 @@
+<!-- Holiday
+	Joseph McCollum
+	03/30/2021
+	
+	Project to show days until Christmas-->
+	
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="site.css">
+		<meta charset=utf-8 />
+		<title>Write a JavaScript program to calculate days left until next Christmas</title>
+	</head>
+
+	<body>
+		<h2 id="days"></h2>
+		<h1>Days Until Christmas!</h1>
+	</body>
+	<script>
+		today=new Date();
+		var cmas=new Date(today.getFullYear(), 11, 25);
+		if (today.getMonth()==11 && today.getDate()>25) 
+		{
+		cmas.setFullYear(cmas.getFullYear()+1); 
+		}  
+		var one_day=1000*60*60*24;
+		document.getElementById("days").innerHTML = (Math.ceil((cmas.getTime()-today.getTime())/(one_day)));
+	</script>
+</html>
